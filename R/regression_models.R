@@ -45,13 +45,21 @@ train.lm.expo.trend.pred = forecast( train.lm.expo.trend, h=nValid, level=0 )
 train.lm.poly.trend = tslm( train.ts ~ trend + I( trend^2 ) )
 train.lm.poly.trend.pred = forecast( train.lm.poly.trend, h=nValid, level=0 )
 
-# model training - Seasonality
-train.lm.season = tslm( train.s.ts ~ season )
-train.lm.season.pred = forecast( train.lm.season, h=nValid, level=0 )
+# model training - Additive Seasonality
+train.lm.season.add = tslm( train.s.ts ~ season )
+train.lm.season.add.pred = forecast( train.lm.season.add, h=nValid, level=0 )
 
-# model training - Seasonality + Trend
-train.lm.trend.season = tslm( train.s.ts ~ trend + I(trend^2) + season )
-train.lm.trend.season.pred = forecast( train.lm.trend.season, h=nValid, level=0 )
+# model training - Multiplicative Seasonality
+train.lm.season.mul = tslm( train.s.ts ~ season, lambda=0 )
+train.lm.season.mul.pred = forecast( train.lm.season.mul, h=nValid, level=0 )
+
+# model training - Additive Seasonality + Polinomial Trend
+train.lm.pol.trend.add.season = tslm( train.s.ts ~ trend + I(trend^2) + season, lambda=1 )
+train.lm.pol.trend.add.season.pred = forecast( train.lm.pol.trend.add.season, h=nValid, level=0 )
+
+# model training - Multiplicative Seasonality + Polinomial Trend
+train.lm.pol.trend.mul.season = tslm( train.s.ts ~ trend + I(trend^2) + season, lambda=0 )
+train.lm.pol.trend.mul.season.pred = forecast( train.lm.pol.trend.mul.season, h=nValid, level=0 )
 
 # ----------------------------------------------------------
 # Visual Results
@@ -80,26 +88,32 @@ axis( 1, at=seq( 1991, 2006, 1 ), labels=format( seq( 1991, 2006, 1 ) ) )
 lines( train.lm.poly.trend.pred$fitted, lwd=2, col='blue' )
 lines( valid.ts, col='red' )
 
-# Seasonality
+# Additive Seasonality
 dev.new()
 par( mfrow=c( 2, 2 ) )
-plot( train.lm.season.pred, ylim=c( 1300, 2600 ), ylab='Ridership', xlab='Time', bty='l', xaxt='n',
-      xlim=c( 1991, 2006 ), main='Seasonality', flty=2 )
+plot( train.lm.season.add.pred, ylim=c( 1300, 2600 ), ylab='Ridership', xlab='Time', bty='l', xaxt='n',
+      xlim=c( 1991, 2006 ), main='Additive Seasonality', flty=2 )
 axis( 1, at=seq( 1991, 2006, 1 ), labels=format( seq( 1991, 2006, 1 ) ) )
-lines( train.lm.season.pred$fitted, lwd=2, col='blue' )
+lines( train.lm.season.add.pred$fitted, lwd=2, col='blue' )
 lines( valid.ts, col='red' )
 
-plot( train.lm.season.pred$residuals, ylab='Residuals', xlab='Time', bty='l', xaxt='n', 
-      xlim=c( 1991, 2006 ), main='Residuals' )
+# Multiplicative Seasonality
+plot( train.lm.season.mul.pred, ylim=c( 1300, 2600 ), ylab='Ridership', xlab='Time', bty='l', xaxt='n',
+      xlim=c( 1991, 2006 ), main='Multiplicative Seasonality', flty=2 )
 axis( 1, at=seq( 1991, 2006, 1 ), labels=format( seq( 1991, 2006, 1 ) ) )
-
-# Seasonality + Trend
-plot( train.lm.trend.season.pred, ylim=c( 1300, 2600 ), ylab='Ridership', xlab='Time', bty='l', xaxt='n',
-      xlim=c( 1991, 2006 ), main='Seasonality + Trend', flty=2 )
-axis( 1, at=seq( 1991, 2006, 1 ), labels=format( seq( 1991, 2006, 1 ) ) )
-lines( train.lm.trend.season.pred$fitted, lwd=2, col='blue' )
+lines( train.lm.season.mul.pred$fitted, lwd=2, col='blue' )
 lines( valid.ts, col='red' )
 
-plot( train.lm.trend.season.pred$residuals, ylab='Residuals', xlab='Time', bty='l', xaxt='n', 
-      xlim=c( 1991, 2006 ), main='Residuals' )
+# Additive Seasonality + Polynomial Trend
+plot( train.lm.pol.trend.add.season.pred, ylim=c( 1300, 2600 ), ylab='Ridership', xlab='Time', bty='l', 
+      xaxt='n', xlim=c( 1991, 2006 ), main='Pol Seasonality + Add Trend', flty=2 )
 axis( 1, at=seq( 1991, 2006, 1 ), labels=format( seq( 1991, 2006, 1 ) ) )
+lines( train.lm.pol.trend.add.season.pred$fitted, lwd=2, col='blue' )
+lines( valid.ts, col='red' )
+
+# Mul Seasonality + Polynomial Trend
+plot( train.lm.pol.trend.mul.season.pred, ylim=c( 1300, 2600 ), ylab='Ridership', xlab='Time', bty='l', 
+      xaxt='n', xlim=c( 1991, 2006 ), main='Pol Seasonality + Add Trend', flty=2 )
+axis( 1, at=seq( 1991, 2006, 1 ), labels=format( seq( 1991, 2006, 1 ) ) )
+lines( train.lm.pol.trend.mul.season.pred$fitted, lwd=2, col='blue' )
+lines( valid.ts, col='red' )

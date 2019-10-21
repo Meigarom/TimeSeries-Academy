@@ -4,6 +4,9 @@
 
 # Session Data files
 .RData
+.venv
+*.csv
+*.xlsx
 
 # Example code in package build process
 *-Ex.R

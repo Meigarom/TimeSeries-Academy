@@ -1,0 +1,30 @@
+# Github: https://github.com/PacktPublishing/Practical-Time-Series-Analysis
+
+# ------------------------------------------
+# ------------------------------------------
+# Chapter 02: Understanding Time Series Data
+# ------------------------------------------
+# ------------------------------------------
+
+# -------------------
+# Stationary Data: 
+# -------------------
+	- Important for enhancing the time series forecasting model.
+	- Deduction of the TREND, SEASONAL AND CYCLICAL components would leave us with irregular fluctuations which cannot be modeled by using only the time index as an exploratory variable
+	- The irregular fluctuations are assumed to be independent and identically distributed (iid) and modeled by a linear regression on variables other than the time index
+	- House prices exhibit both trend and seasonal variation. However, the residuals left after adjusting trend and seasonality depends on exogenous variables.
+
+# --------------
+# Main Steps:
+# --------------
+1) Preprocess & visualize time series data
+2) Verify stationarity by statistical methods
+3) Is stationary?
+	Yes) Train Model on exogenous variables
+	No ) Stationarize the time Series
+4) Train Model on exogenours variables
+
+
+# ------------------------------------------------------------
+# ADVANCED PROCESSING AND VISUALIZATION OF TIME SERIES DATA
+# ------------------------------------------------------------

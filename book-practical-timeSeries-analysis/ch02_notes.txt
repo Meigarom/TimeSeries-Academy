@@ -28,3 +28,4 @@
 # ------------------------------------------------------------
 # ADVANCED PROCESSING AND VISUALIZATION OF TIME SERIES DATA
 # ------------------------------------------------------------
+	- Aggregate values: From second to hour

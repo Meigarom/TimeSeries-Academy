@@ -29,3 +29,10 @@
 # ADVANCED PROCESSING AND VISUALIZATION OF TIME SERIES DATA
 # ------------------------------------------------------------
 	- Aggregate values: From second to hour
+	- Aggregation techniques:
+		- Resampling time series data
+		- Performing group-by
+		- Calculating moving statistics
+
+1) Resampling time series data
+

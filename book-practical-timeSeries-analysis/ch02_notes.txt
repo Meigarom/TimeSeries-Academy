@@ -36,3 +36,18 @@
 
 1) Resampling time series data
 
+2) Group wise aggregation
+
+3) Moving Statistics
+
+4) Stationary Processes
+	- Properties of data: Central Tendency, dispersion, skewness, kurtosis
+	- Statistical estimation theory: Sample statistics to be reliable, the population undergo and fundamental or systemic shifts over the individuals in the sample or over the time during which the data has been collected.
+	- Stationarity: Requires the internal structures of the time series do not change over time. Therefore, stationarity requires mean, variance, and autocorrelation to be invariant with respect to the actual time of observation.
+	- Non-stationarity: Mostly arises due to the presence of trend and seasonality that affects the mean, variance, and autocorrelation at different points in time.
+	- Crucical Steps: 1) Statistically verifying stationarity ( Augemented Dickey-Fuller ( ADF ) ) 
+		          2) Destationarizing a non-stationary time series through special mathematical operations.
+	- Differencing can remove trend and seasonal components.
+
+5) Differencing
+

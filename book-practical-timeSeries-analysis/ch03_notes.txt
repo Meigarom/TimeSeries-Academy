@@ -1,0 +1,5 @@
+# Github: https://github.com/PacktPublishing/Practical-Time-Series-Analysis
+
+# ------------------------------------------
+# Chapter 03: Exponential Smoothing based Methods
+# ------------------------------------------

@@ -3,3 +3,17 @@
 # ------------------------------------------
 # Chapter 03: Exponential Smoothing based Methods
 # ------------------------------------------
+1) First Order Exponential Smoothing
+	- Suitable with Constant Variance and No Seasonality.
+	- First Order Exponential Smoothing extendes Simple Moving Average.
+	- Assumes equal weight to all historical observations.
+	- Window Size for Moving Average increases, the weights assigned to each observation become smaller.
+	- First Order Exponentail Smoothing where weights decrease exponentially from recent data point to the oldest.
+	- Need to define ALPHA parameter.
+
+2) Second Order Exponential Smoothing
+	- Helps capture the trend in time series data by including another term to the first order exponential smoothing ( T term ).
+	- T captures the trend component of the exponential smoothing.
+	- Need to define AlPHA and BETA parameters.
+
+3) Modeling Higher-Order Exponential Smoothing

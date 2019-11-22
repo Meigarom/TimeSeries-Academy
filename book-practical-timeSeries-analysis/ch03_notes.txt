@@ -17,3 +17,6 @@
 	- Need to define AlPHA and BETA parameters.
 
 3) Modeling Higher-Order Exponential Smoothing
+	- Autoregressive Integrated Moving Average (ARIMA)
+	- Triple Exponential Smoothing.
+		- Allows you to capture seasonality with level and trend.

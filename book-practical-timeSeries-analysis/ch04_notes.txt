@@ -27,3 +27,5 @@
 	- The model helps yu to adjust for any unpredictable events such as catastrophic events.
 
 3) Building datasets with ARIMA
+	- Sales, in general, follows an ARMA(1,1) model as sales in time t is a function of prior sales happening in time t-1, which plays a role in the AR component.
+	- The MA(q) is caused due to time-based campaigns launched by the company, such as distribution of coupons will lead to moving average effect to the process as sales will increases temporarily and the change in sales effect is captured by the moving average component.

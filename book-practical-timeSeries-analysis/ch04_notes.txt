@@ -29,3 +29,44 @@
 3) Building datasets with ARIMA
 	- Sales, in general, follows an ARMA(1,1) model as sales in time t is a function of prior sales happening in time t-1, which plays a role in the AR component.
 	- The MA(q) is caused due to time-based campaigns launched by the company, such as distribution of coupons will lead to moving average effect to the process as sales will increases temporarily and the change in sales effect is captured by the moving average component.
+
+4) ARIMA
+	- ARMA model + integrated components
+	- Integrated components are useful when data has non-stationarity.
+	- ARIMAA applies differencing on time series on or more times to remove non-stationarity effect.
+	- The d component aims to de-trend the signal to make it stationary and ARMA model can be applied to the de-trended dataset.
+	- A more negative value of ADF statistics will represent a stationary signal.
+	- Stationary: residual value most negative as possible and p-value close to zero.
+
+5) SUMMARY
+	- MA: Auto-regressive model to capture serial correlation using error relationship.
+	- AR: set up the forecasting using the lag as dependent observations, they are good to capture trend information.
+	- ARMA: capture any time-based trends and catastrophic events leading to a lot of error.
+	- All the above models assume stationarity. In scenarios where stationarity is not present, a differencing-based model such as ARIMA is proposed.
+	- ARIMA: performs differencing in time series datasets to remove any trend-related components.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

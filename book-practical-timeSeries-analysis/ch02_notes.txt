@@ -49,5 +49,18 @@
 		          2) Destationarizing a non-stationary time series through special mathematical operations.
 	- Differencing can remove trend and seasonal components.
 
-5) Differencing
+5) Differencing - Goal: Generate a stationarize time series
+	- First-order differencing: ( xt = xt - xt-1 )
+	- Second-order differencing: ( xt = xt - 2xt-1 + xt-2 )
 
+6) Seasonal differencing
+
+7) Augmented Dickey-Fuller test
+
+8) Time series decomposition
+	- The goal of time series decomposition is to model the long-term trend and seasonality and estimate the overall time series as a combination of them. 
+	- Additive model - Applied when there is a time-dependent trend cycle component, but independent seasonality that does not change over time.
+	- Multiplicative model - Applied over time-varying seasonality.
+
+	- Moving Averages - Estimate the trend and seasonal components.
+	- Weighted moving average

@@ -1,0 +1,72 @@
+# Github: https://github.com/PacktPublishing/Practical-Time-Series-Analysis
+
+# ------------------------------------------
+# Chapter 04: Auto-Regressive Models
+# ------------------------------------------
+	- Exponential smoothing-based forecasting techniques:
+		- Assumptions:  - Time Series composed on deterministic and stochastic terms.
+				- The random component is zero
+				- The random noise is truly random and follows independent identical distribution
+	- Auto-regressive Models:
+		- The concept of auto-regressive model in time series is referred to models that are developed by regression on previous values.
+		- Adjust immediately using the prior lag values by taking advantage of inherent serial correlation between observations.
+		- Include auto-regressive terms or moving average terms.
+		- Moving Average ( MA )
+		- Auto-regressive moving average ( ARMA )
+		- Auto-regressive integrated moving average ( ARIMA )
+
+1) Auto-regressive models
+	- Moving average models: Linear dependence on historical deviation of models from the last prior value.
+	- Auto-regressive models: 
+		- Regress on time series data is to regress it with its lag term.
+		- Very good in capturing trends as the next time values are predicted based on the prior time values.
+		- Very useful in situations where the next forecasted value is a function of the previous time period.
+
+2) Moving average models
+	- It uses dependency between residual errors to forecast values in the next time period.
+	- The model helps yu to adjust for any unpredictable events such as catastrophic events.
+
+3) Building datasets with ARIMA
+	- Sales, in general, follows an ARMA(1,1) model as sales in time t is a function of prior sales happening in time t-1, which plays a role in the AR component.
+	- The MA(q) is caused due to time-based campaigns launched by the company, such as distribution of coupons will lead to moving average effect to the process as sales will increases temporarily and the change in sales effect is captured by the moving average component.
+
+4) ARIMA
+	- ARMA model + integrated components
+	- Integrated components are useful when data has non-stationarity.
+	- ARIMAA applies differencing on time series on or more times to remove non-stationarity effect.
+	- The d component aims to de-trend the signal to make it stationary and ARMA model can be applied to the de-trended dataset.
+	- A more negative value of ADF statistics will represent a stationary signal.
+	- Stationary: residual value most negative as possible and p-value close to zero.
+
+5) SUMMARY
+	- MA: Auto-regressive model to capture serial correlation using error relationship.
+	- AR: set up the forecasting using the lag as dependent observations, they are good to capture trend information.
+	- ARMA: capture any time-based trends and catastrophic events leading to a lot of error.
+	- All the above models assume stationarity. In scenarios where stationarity is not present, a differencing-based model such as ARIMA is proposed.
+	- ARIMA: performs differencing in time series datasets to remove any trend-related components.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
